@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sergio Steven Sanchez Montenegro 051100032025">
+
+<title>Taller 1 - Estadistica para la Educación 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Taller_1_Estadistica_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Taller_1_Estadistica_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Taller_1_Estadistica_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Taller_1_Estadistica_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Taller_1_Estadistica_files/libs/quarto-html/popper.min.js"></script>
+<script src="Taller_1_Estadistica_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Taller_1_Estadistica_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Taller_1_Estadistica_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Taller_1_Estadistica_files/libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Taller_1_Estadistica_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Taller_1_Estadistica_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Taller_1_Estadistica_files/libs/bootstrap/bootstrap-e587636b1089466ab61c55ffe74fe944.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #2D05FF;
+      }
+</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Taller 1 - Estadistica para la Educación 2</h1>
+            <p class="subtitle lead">TALLER</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page-left">
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-heading">Afiliación</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Sergio Steven Sanchez Montenegro<br>051100032025 </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.ut.edu.co/">
+              Universidad del Tolima
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page-left">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">7 de abril de 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul class="collapse">
+  <li><a href="#cargar-paquetes" id="toc-cargar-paquetes" class="nav-link active" data-scroll-target="#cargar-paquetes"><span class="header-section-number">1</span> .Cargar paquetes</a></li>
+  <li><a href="#punto-4" id="toc-punto-4" class="nav-link" data-scroll-target="#punto-4"><span class="header-section-number">2</span> .Punto 4</a>
+  <ul class="collapse">
+  <li><a href="#respuesta" id="toc-respuesta" class="nav-link" data-scroll-target="#respuesta"><span class="header-section-number">2.1</span> Respuesta</a></li>
+  </ul></li>
+  <li><a href="#punto-5" id="toc-punto-5" class="nav-link" data-scroll-target="#punto-5"><span class="header-section-number">3</span> .Punto 5</a>
+  <ul class="collapse">
+  <li><a href="#respuesta-1" id="toc-respuesta-1" class="nav-link" data-scroll-target="#respuesta-1"><span class="header-section-number">3.1</span> Respuesta</a></li>
+  </ul></li>
+  <li><a href="#punto-8" id="toc-punto-8" class="nav-link" data-scroll-target="#punto-8"><span class="header-section-number">4</span> .Punto 8</a>
+  <ul class="collapse">
+  <li><a href="#respuesta-2" id="toc-respuesta-2" class="nav-link" data-scroll-target="#respuesta-2"><span class="header-section-number">4.1</span> Respuesta</a></li>
+  </ul></li>
+  <li><a href="#punto-9" id="toc-punto-9" class="nav-link" data-scroll-target="#punto-9"><span class="header-section-number">5</span> .Punto 9</a>
+  <ul class="collapse">
+  <li><a href="#respuesta-3" id="toc-respuesta-3" class="nav-link" data-scroll-target="#respuesta-3"><span class="header-section-number">5.1</span> Respuesta</a></li>
+  </ul></li>
+  <li><a href="#punto-19" id="toc-punto-19" class="nav-link" data-scroll-target="#punto-19"><span class="header-section-number">6</span> .Punto 19</a>
+  <ul class="collapse">
+  <li><a href="#respuesta-4" id="toc-respuesta-4" class="nav-link" data-scroll-target="#respuesta-4"><span class="header-section-number">6.1</span> Respuesta</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">knitr.table.format =</span> <span class="st">"html"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">scipen =</span> <span class="dv">999</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div style="position:absolute; top:10px; right:10px;">
+<img src="Logo_UT.png" width="150">
+</div>
+<style>
+body{
+  background-color:#f7f6ed;
+  font-size:130%;
+  text-align:justify;
+}
+</style>
+<section id="cargar-paquetes" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> .Cargar paquetes</h1>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ipak <span class="ot">&lt;-</span> <span class="cf">function</span>(pkg){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN=</span><span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  new.pkg <span class="ot">&lt;-</span> pkg[<span class="sc">!</span>(pkg <span class="sc">%in%</span> <span class="fu">rownames</span>(<span class="fu">installed.packages</span>()))]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(new.pkg)) <span class="fu">install.packages</span>(new.pkg, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(<span class="fu">lapply</span>(pkg, <span class="cf">function</span>(p)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(p, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>,<span class="st">"kableExtra"</span>,<span class="st">"psych"</span>,<span class="st">"readxl"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ipak</span>(packages)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<hr>
+</section>
+<section id="punto-4" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> .Punto 4</h1>
+<p>
+Una organización de consumidores anota regularmente el número de defectos importantes que se encuentran en un automóvil nuevo. De sus estudios ha encontrado que la función de distribución de la variable aleatoria <span class="math inline">X</span> anteriormente mencionada es:
+</p>
+<p><span class="math display">
+F(x) = \begin{cases}
+0 &amp; \text{si } x &lt; 0 \\
+0.06 &amp; \text{si } 0 \le x &lt; 1 \\
+0.19 &amp; \text{si } 1 \le x &lt; 2 \\
+0.39 &amp; \text{si } 2 \le x &lt; 3 \\
+0.67 &amp; \text{si } 3 \le x &lt; 4 \\
+0.92 &amp; \text{si } 4 \le x &lt; 5 \\
+0.97 &amp; \text{si } 5 \le x &lt; 6 \\
+1 &amp; \text{si } 6 \le x
+\end{cases}
+</span></p>
+<ol type="a">
+<li>
+Calcular <span class="math inline">p[X = 2]</span>.
+</li>
+<li>
+Calcular <span class="math inline">p[X \ge 3]</span>.
+</li>
+<li>
+Calcular <span class="math inline">p[2 \le X \le 5]</span>.
+</li>
+<li>
+Calcular <span class="math inline">p[2 &lt; X &lt; 5]</span>.
+</li>
+<li>
+Obtener la esperanza, la varianza y la desviación típica de <span class="math inline">X</span>.
+</li>
+</ol>
+<section id="respuesta" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="respuesta"><span class="header-section-number">2.1</span> Respuesta</h2>
+<p>
+La función de distribución acumulada es:
+</p>
+<p>
+<span class="math display">
+F(x)=
+\begin{cases}
+0 &amp; x &lt; 0 \\
+0.06 &amp; 0 \le x &lt; 1 \\
+0.19 &amp; 1 \le x &lt; 2 \\
+0.39 &amp; 2 \le x &lt; 3 \\
+0.67 &amp; 3 \le x &lt; 4 \\
+0.92 &amp; 4 \le x &lt; 5 \\
+0.97 &amp; 5 \le x &lt; 6 \\
+1 &amp; x \ge 6
+\end{cases}
+</span>
+</p>
+<p>
+Primero, a partir de la función de distribución acumulada <span class="math inline">F(x)</span>, calculamos la función de probabilidad (o masa de probabilidad) <span class="math inline">p(x)=P(X=x)</span>, recordando que:
+</p>
+<p>
+<span class="math display">
+    P(X=x)=F(x)-F(x^-)
+    </span>
+</p>
+<p>
+Entonces:
+</p>
+<p>
+<span class="math display">
+    \begin{aligned}
+    P(X=0) &amp;= 0.06 - 0 = 0.06 \\
+    P(X=1) &amp;= 0.19 - 0.06 = 0.13 \\
+    P(X=2) &amp;= 0.39 - 0.19 = 0.20 \\
+    P(X=3) &amp;= 0.67 - 0.39 = 0.28 \\
+    P(X=4) &amp;= 0.92 - 0.67 = 0.25 \\
+    P(X=5) &amp;= 0.97 - 0.92 = 0.05 \\
+    P(X=6) &amp;= 1.00 - 0.97 = 0.03
+    \end{aligned}
+    </span>
+</p>
+<h3 class="anchored">
+<ol type="a">
+<li><p>Probabilidad puntual</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+P(X=2) = F(2) - F(2^-) = 0.39 - 0.19 = 0.20
+</span>
+</p>
+<h3 class="anchored">
+<ol start="2" type="a">
+<li><p>Probabilidad acumulada</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+P(X \ge 3) = 1 - F(3^-) = 1 - 0.39 = 0.61
+</span>
+</p>
+<h3 class="anchored">
+<ol start="3" type="a">
+<li><p>Intervalo cerrado</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+P(2 \le X \le 5) = F(5) - F(2^-) = 0.97 - 0.19 = 0.78
+</span>
+</p>
+<h3 class="anchored">
+<ol start="4" type="a">
+<li><p>Intervalo abierto</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+P(2 &lt; X &lt; 5) = F(5^-) - F(2) = 0.92 - 0.39 = 0.53
+</span>
+</p>
+<h3 class="anchored">
+<ol start="5" type="a">
+<li><p>Esperanza</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+E[X] = \sum x \cdot P(X=x)
+</span>
+</p>
+<p>
+<span class="math display">
+E[X] = 0(0.06) + 1(0.13) + 2(0.20) + 3(0.28) + 4(0.25) + 5(0.05) + 6(0.03)
+</span>
+</p>
+<p>
+<span class="math display">
+E[X] = 2.8
+</span>
+</p>
+<h3 class="anchored">
+Varianza
+</h3>
+<p>
+<span class="math display">
+Var(X) = E[X^2] - (E[X])^2
+</span>
+</p>
+<p>
+<span class="math display">
+E[X^2] = 10.18
+</span>
+</p>
+<p>
+<span class="math display">
+Var(X) = 10.18 - (2.8)^2 = 2.34
+</span>
+</p>
+<h3 class="anchored">
+Desviación estándar
+</h3>
+<p>
+<span class="math display">
+\sigma = \sqrt{2.34} \approx 1.53
+</span>
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de x</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de F(x)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.06</span>,<span class="fl">0.19</span>,<span class="fl">0.39</span>,<span class="fl">0.67</span>,<span class="fl">0.92</span>,<span class="fl">0.97</span>,<span class="dv">1</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfica tipo escalón</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, F, <span class="at">type=</span><span class="st">"s"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"F(x)"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Función de Distribución Acumulada (CDF)"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Función de probabilidad f(x)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.06</span>, <span class="fl">0.13</span>, <span class="fl">0.20</span>, <span class="fl">0.28</span>, <span class="fl">0.25</span>, <span class="fl">0.05</span>, <span class="fl">0.03</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfica tipo puntos</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, f,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"h"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">3</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"f(x) = P(X = x)"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Función de Probabilidad f(x)"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(f) <span class="sc">+</span> <span class="fl">0.05</span>))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x, f, <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="punto-5" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> .Punto 5</h1>
+<p>
+Sea <span class="math inline">X</span> la variable aleatoria que representa la suma de resultados al lanzar dos dados.
+</p>
+<ol type="a">
+<li>
+¿Cuál es el soporte de la variable aleatoria <span class="math inline">X</span>?
+</li>
+<li>
+Obtener la función de probabilidad de la variable y su diagrama de barras.
+</li>
+<li>
+Hallar la función de distribución de <span class="math inline">X</span> y representarla gráficamente.
+</li>
+<li>
+Calcular la probabilidad de que la suma de los resultados obtenidos al lanzar dos dados sea mayor que 4 y menor que 8.
+</li>
+<li>
+Calcular la probabilidad de que la suma de los resultados obtenidos al lanzar dos dados sea mayor o igual que 4 y menor o igual que 8.
+</li>
+<li>
+¿Cuál es el valor esperado de la suma de los resultados al lanzar dos dados? ¿Y su desviación típica?
+</li>
+</ol>
+<section id="respuesta-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="respuesta-1"><span class="header-section-number">3.1</span> Respuesta</h2>
+<p>
+Sea <span class="math inline">X</span> la variable aleatoria que representa la suma de resultados al lanzar dos dados.
+</p>
+<h3 class="anchored">
+<ol type="a">
+<li><p>Soporte de la variable aleatoria</p>
+</li></ol></h3>
+
+<p>
+El soporte de <span class="math inline">X</span> es:
+</p>
+<p>
+<span class="math display">
+S_X=\{2,3,4,5,6,7,8,9,10,11,12\}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="2" type="a">
+<li><p>Función de probabilidad</p>
+</li></ol></h3>
+
+<p>
+Como hay 36 resultados equiprobables, la función de probabilidad es:
+</p>
+<p>
+<span class="math display">
+f(x)=P(X=x)
+</span>
+</p>
+<p>
+<span class="math display">
+\begin{aligned}
+P(X=2)&amp;=\frac{1}{36} \\
+P(X=3)&amp;=\frac{2}{36} \\
+P(X=4)&amp;=\frac{3}{36} \\
+P(X=5)&amp;=\frac{4}{36} \\
+P(X=6)&amp;=\frac{5}{36} \\
+P(X=7)&amp;=\frac{6}{36} \\
+P(X=8)&amp;=\frac{5}{36} \\
+P(X=9)&amp;=\frac{4}{36} \\
+P(X=10)&amp;=\frac{3}{36} \\
+P(X=11)&amp;=\frac{2}{36} \\
+P(X=12)&amp;=\frac{1}{36}
+\end{aligned}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="3" type="a">
+<li><p>Función de distribución</p>
+</li></ol></h3>
+
+<p>
+La función de distribución acumulada es:
+</p>
+<p>
+<span class="math display">
+F(x)=P(X\le x)
+</span>
+</p>
+<p>
+<span class="math display">
+F(x)=
+\begin{cases}
+0, &amp; x&lt;2 \\
+\frac{1}{36}, &amp; 2\le x&lt;3 \\
+\frac{3}{36}, &amp; 3\le x&lt;4 \\
+\frac{6}{36}, &amp; 4\le x&lt;5 \\
+\frac{10}{36}, &amp; 5\le x&lt;6 \\
+\frac{15}{36}, &amp; 6\le x&lt;7 \\
+\frac{21}{36}, &amp; 7\le x&lt;8 \\
+\frac{26}{36}, &amp; 8\le x&lt;9 \\
+\frac{30}{36}, &amp; 9\le x&lt;10 \\
+\frac{33}{36}, &amp; 10\le x&lt;11 \\
+\frac{35}{36}, &amp; 11\le x&lt;12 \\
+1, &amp; x\ge 12
+\end{cases}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="4" type="a">
+<li><p>Probabilidad de que la suma sea mayor que 4 y menor que 8</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+P(4&lt;X&lt;8)=P(X=5)+P(X=6)+P(X=7)
+</span>
+</p>
+<p>
+<span class="math display">
+P(4&lt;X&lt;8)=\frac{4}{36}+\frac{5}{36}+\frac{6}{36}=\frac{15}{36}=\frac{5}{12}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="5" type="a">
+<li><p>Probabilidad de que la suma sea mayor o igual que 4 y menor o igual que 8</p>
+</li></ol></h3>
+
+<p>
+<span class="math display">
+P(4\le X\le 8)=P(4)+P(5)+P(6)+P(7)+P(8)
+</span>
+</p>
+<p>
+<span class="math display">
+P(4\le X\le 8)=\frac{3+4+5+6+5}{36}=\frac{23}{36}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="6" type="a">
+<li><p>Valor esperado y desviación típica</p>
+</li></ol></h3>
+
+<p>
+Sea <span class="math inline">X</span> la suma de los resultados al lanzar dos dados. Su función de probabilidad es:
+</p>
+<p>
+<span class="math display">
+P(X=x)=\frac{1,2,3,4,5,6,5,4,3,2,1}{36}, \quad x=2,3,\dots,12
+</span>
+</p>
+<p>
+El valor esperado se calcula como:
+</p>
+<p>
+<span class="math display">
+E[X]=\sum_{x=2}^{12} x\,P(X=x)
+</span>
+</p>
+<p>
+<span class="math display">
+E[X]=2\left(\frac{1}{36}\right)+3\left(\frac{2}{36}\right)+4\left(\frac{3}{36}\right)+5\left(\frac{4}{36}\right)+6\left(\frac{5}{36}\right)+7\left(\frac{6}{36}\right)
+</span>
+</p>
+<p>
+<span class="math display">
+\quad +8\left(\frac{5}{36}\right)+9\left(\frac{4}{36}\right)+10\left(\frac{3}{36}\right)+11\left(\frac{2}{36}\right)+12\left(\frac{1}{36}\right)
+</span>
+</p>
+<p>
+<span class="math display">
+E[X]=7
+</span>
+</p>
+<p>
+Ahora calculamos <span class="math inline">E[X^2]</span>:
+</p>
+<p>
+<span class="math display">
+E[X^2]=\sum_{x=2}^{12} x^2P(X=x)
+</span>
+</p>
+<p>
+<span class="math display">
+E[X^2]=\frac{1}{36}\left(2^2\cdot1+3^2\cdot2+4^2\cdot3+5^2\cdot4+6^2\cdot5+7^2\cdot6+8^2\cdot5+9^2\cdot4+10^2\cdot3+11^2\cdot2+12^2\cdot1\right)
+</span>
+</p>
+<p>
+<span class="math display">
+E[X^2]=\frac{329}{6}
+</span>
+</p>
+<p>
+La varianza es:
+</p>
+<p>
+<span class="math display">
+\operatorname{Var}(X)=E[X^2]-(E[X])^2
+</span>
+</p>
+<p>
+<span class="math display">
+\operatorname{Var}(X)=\frac{329}{6}-7^2=\frac{329}{6}-49=\frac{35}{6}
+</span>
+</p>
+<p>
+Finalmente, la desviación típica es:
+</p>
+<p>
+<span class="math display">
+\sigma_X=\sqrt{\operatorname{Var}(X)}=\sqrt{\frac{35}{6}}\approx 2.415
+</span>
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores del soporte</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">12</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilidades de la PMF</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>) <span class="sc">/</span> <span class="dv">36</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfica de barras</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(f,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> x,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"f(x) = P(X = x)"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Función de probabilidad f(x)"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">border =</span> <span class="st">"black"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores donde cambia la CDF</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">12</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores acumulados</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">21</span>, <span class="dv">26</span>, <span class="dv">30</span>, <span class="dv">33</span>, <span class="dv">35</span>, <span class="dv">36</span>) <span class="sc">/</span> <span class="dv">36</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfica escalonada</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, F,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"s"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"F(x)"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Función de distribución acumulada F(x)"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x, F, <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="punto-8" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> .Punto 8</h1>
+<p>
+La variable aleatoria <span class="math inline">X</span> tiene función de densidad dada por:
+</p>
+<p><span class="math display">
+f(x) = \begin{cases}
+\frac{1}{3} &amp; \text{si } x \in (0, 1) \\
+\frac{1}{3} &amp; \text{si } x \in (2, 4) \\
+0 &amp; \text{en el resto}
+\end{cases}
+</span></p>
+<ol type="a">
+<li>
+Demostrar que <span class="math inline">f(x)</span> es una función de densidad y representarla gráficamente.
+</li>
+<li>
+Obtener la función de distribución de la variable aleatoria <span class="math inline">X</span> y representarla gráficamente.
+</li>
+<li>
+Calcular <span class="math inline">p[X &lt; 0.6]</span>.
+</li>
+<li>
+Calcular <span class="math inline">p[0.3 \le X \le 0.6]</span>.
+</li>
+<li>
+Calcular <span class="math inline">p[0.6 &lt; X &lt; 3.4]</span>.
+</li>
+<li>
+Obtener el rango intercuartílico de la variable aleatoria <span class="math inline">X</span>.
+</li>
+</ol>
+<section id="respuesta-2" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="respuesta-2"><span class="header-section-number">4.1</span> Respuesta</h2>
+<p>
+Sea <span class="math inline">X</span> una variable aleatoria continua con función de densidad dada por:
+</p>
+<p>
+<span class="math display">
+f(x)=
+\begin{cases}
+\frac{1}{3}, &amp; x \in (0,1) \\
+\frac{1}{3}, &amp; x \in (2,4) \\
+0, &amp; \text{en cualquier otro caso}
+\end{cases}
+</span>
+</p>
+<h3 class="anchored">
+<ol type="a">
+<li><p>Demostrar que <span class="math inline">f(x)</span> es una función de densidad y representarla gráficamente</p>
+</li></ol></h3>
+
+<p>
+Para que una función sea densidad de probabilidad debe cumplir dos condiciones: primero, que sea no negativa en todo su dominio, y segundo, que el área total bajo la curva sea igual a 1.
+</p>
+<p>
+En este caso, se observa que <span class="math inline">f(x)\ge 0</span> para todo <span class="math inline">x</span>, ya que sus valores solo pueden ser <span class="math inline">\frac{1}{3}</span> o <span class="math inline">0</span>. Por tanto, solo falta verificar la integral total:
+</p>
+<p>
+<span class="math display">
+\int_{-\infty}^{\infty} f(x)\,dx
+=
+\int_0^1 \frac{1}{3}\,dx
++
+\int_2^4 \frac{1}{3}\,dx
+</span>
+</p>
+<p>
+Resolviendo cada parte:
+</p>
+<p>
+<span class="math display">
+\int_0^1 \frac{1}{3}\,dx
+=
+\frac{1}{3}(1-0)
+=
+\frac{1}{3}
+</span>
+</p>
+<p>
+<span class="math display">
+\int_2^4 \frac{1}{3}\,dx
+=
+\frac{1}{3}(4-2)
+=
+\frac{2}{3}
+</span>
+</p>
+<p>
+Sumando ambos resultados:
+</p>
+<p>
+<span class="math display">
+\int_{-\infty}^{\infty} f(x)\,dx
+=
+\frac{1}{3}+\frac{2}{3}=1
+</span>
+</p>
+<p>
+Como se cumple que el área total es 1 y además <span class="math inline">f(x)\ge 0</span>, entonces sí es una función de densidad.
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rango de valores</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Función de densidad</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">ifelse</span>((x <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">|</span> (x <span class="sc">&gt;</span> <span class="dv">2</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">4</span>), <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">0</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfica</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, f,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"f(x)"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Función de densidad f(x)"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+<ol start="2" type="a">
+<li><p>Obtener la función de distribución de la variable aleatoria <span class="math inline">X</span></p>
+</li></ol></h3>
+
+<p>
+La función de distribución acumulada se define como:
+</p>
+<p>
+<span class="math display">
+F(x)=P(X\le x)=\int_{-\infty}^{x} f(t)\,dt
+</span>
+</p>
+<p>
+Debido a que la densidad tiene dos intervalos distintos, la función acumulada se obtiene por tramos.
+</p>
+<p>
+Si <span class="math inline">x \le 0</span>, no se ha acumulado probabilidad, por lo que:
+</p>
+<p>
+<span class="math display">
+F(x)=0
+</span>
+</p>
+<p>
+Si <span class="math inline">0 &lt; x \le 1</span>, se integra solo sobre el primer intervalo:
+</p>
+<p>
+<span class="math display">
+F(x)=\int_0^x \frac{1}{3}\,dt=\frac{x}{3}
+</span>
+</p>
+<p>
+Si <span class="math inline">1 &lt; x \le 2</span>, ya se acumuló toda la probabilidad del primer intervalo:
+</p>
+<p>
+<span class="math display">
+F(x)=\int_0^1 \frac{1}{3}\,dt=\frac{1}{3}
+</span>
+</p>
+<p>
+Si <span class="math inline">2 &lt; x \le 4</span>, se suma lo acumulado en <span class="math inline">(0,1)</span> más lo que va desde <span class="math inline">2</span> hasta <span class="math inline">x</span>:
+</p>
+<p>
+<span class="math display">
+F(x)=\int_0^1 \frac{1}{3}\,dt+\int_2^x \frac{1}{3}\,dt
+</span>
+</p>
+<p>
+<span class="math display">
+F(x)=\frac{1}{3}+\frac{x-2}{3}
+</span>
+</p>
+<p>
+Finalmente, si <span class="math inline">x&gt;4</span>, ya se acumuló toda la probabilidad:
+</p>
+<p>
+<span class="math display">
+F(x)=1
+</span>
+</p>
+<p>
+Entonces, la función de distribución queda:
+</p>
+<p>
+<span class="math display">
+F(x)=
+\begin{cases}
+0, &amp; x \le 0 \\
+\frac{x}{3}, &amp; 0 &lt; x \le 1 \\
+\frac{1}{3}, &amp; 1 &lt; x \le 2 \\
+\frac{1}{3}+\frac{x-2}{3}, &amp; 2 &lt; x \le 4 \\
+1, &amp; x &gt; 4
+\end{cases}
+</span>
+</p>
+<p>
+Y su respresentación grafica sera:
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x<span class="sc">&lt;=</span><span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;=</span><span class="dv">1</span>,x<span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;=</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;=</span><span class="dv">4</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">3</span><span class="sc">+</span>(x<span class="dv">-2</span>)<span class="sc">/</span><span class="dv">3</span>,<span class="dv">1</span>))))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, F, <span class="at">type=</span><span class="st">"l"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">"F(x)"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Función de distribución acumulada"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+<ol start="3" type="a">
+<li><p>Calcular <span class="math inline">p[X &lt; 0.6]</span>.</p>
+</li></ol></h3>
+
+<p>
+Como <span class="math inline">0.6</span> pertenece al intervalo <span class="math inline">(0,1)</span>, se integra la densidad desde 0 hasta 0.6:
+</p>
+<p>
+<span class="math display">
+P(X&lt;0.6)=\int_0^{0.6}\frac{1}{3}\,dx
+</span>
+</p>
+<p>
+<span class="math display">
+P(X&lt;0.6)=\frac{1}{3}(0.6-0)=0.2
+</span>
+</p>
+<h3 class="anchored">
+<ol start="4" type="a">
+<li><p>Calcular <span class="math inline">p[0.3 \le X \le 0.6]</span>.</p>
+</li></ol></h3>
+
+<p>
+Este intervalo también está dentro de <span class="math inline">(0,1)</span>, por lo que basta integrar la densidad entre esos dos puntos:
+</p>
+<p>
+<span class="math display">
+P(0.3 \le X \le 0.6)=\int_{0.3}^{0.6}\frac{1}{3}\,dx
+</span>
+</p>
+<p>
+<span class="math display">
+P(0.3 \le X \le 0.6)=\frac{1}{3}(0.6-0.3)=\frac{0.3}{3}=0.1
+</span>
+</p>
+<h3 class="anchored">
+<ol start="5" type="a">
+<li><p>Calcular <span class="math inline">p[0.6 &lt; X &lt; 3.4]</span></p>
+</li></ol></h3>
+
+<p>
+En este caso el intervalo atraviesa la parte donde la densidad es cero, es decir, entre <span class="math inline">1</span> y <span class="math inline">2</span>. Por eso, se divide la probabilidad en dos partes:
+</p>
+<p>
+<span class="math display">
+P(0.6&lt;X&lt;3.4)=P(0.6&lt;X&lt;1)+P(2&lt;X&lt;3.4)
+</span>
+</p>
+<p>
+Calculamos la primera parte:
+</p>
+<p>
+<span class="math display">
+P(0.6&lt;X&lt;1)=\int_{0.6}^{1}\frac{1}{3}\,dx
+=\frac{1}{3}(1-0.6)=\frac{0.4}{3}
+</span>
+</p>
+<p>
+Y la segunda parte:
+</p>
+<p>
+<span class="math display">
+P(2&lt;X&lt;3.4)=\int_{2}^{3.4}\frac{1}{3}\,dx
+=\frac{1}{3}(3.4-2)=\frac{1.4}{3}
+</span>
+</p>
+<p>
+Sumando ambas:
+</p>
+<p>
+<span class="math display">
+P(0.6&lt;X&lt;3.4)=\frac{0.4}{3}+\frac{1.4}{3}=\frac{1.8}{3}=0.6
+</span>
+</p>
+<h3 class="anchored">
+<ol start="6" type="a">
+<li><p>Obtener el rango intercuartílico de la variable aleatoria <span class="math inline">X</span></p>
+</li></ol></h3>
+
+<p>
+El rango intercuartílico se define como:
+</p>
+<p>
+<span class="math display">
+RIQ=Q_3-Q_1
+</span>
+</p>
+<p>
+donde <span class="math inline">Q_1</span> es el primer cuartil y <span class="math inline">Q_3</span> es el tercer cuartil. Estos valores se obtienen resolviendo:
+</p>
+<p>
+<span class="math display">
+F(Q_1)=0.25
+\qquad \text{y} \qquad
+F(Q_3)=0.75
+</span>
+</p>
+<p>
+Para <span class="math inline">Q_1</span>, como <span class="math inline">0.25</span> cae en el tramo <span class="math inline">0&lt;x\le 1</span>, usamos:
+</p>
+<p>
+<span class="math display">
+\frac{x}{3}=0.25
+</span>
+</p>
+<p>
+<span class="math display">
+x=0.75
+</span>
+</p>
+<p>
+Entonces:
+</p>
+<p>
+<span class="math display">
+Q_1=0.75
+</span>
+</p>
+<p>
+Para <span class="math inline">Q_3</span>, observamos que <span class="math inline">0.75</span> cae en el tramo <span class="math inline">2&lt;x\le 4</span>, así que:
+</p>
+<p>
+<span class="math display">
+\frac{1}{3}+\frac{x-2}{3}=0.75
+</span>
+</p>
+<p>
+Multiplicando por 3:
+</p>
+<p>
+<span class="math display">
+1+x-2=2.25
+</span>
+</p>
+<p>
+<span class="math display">
+x-1=2.25
+</span>
+</p>
+<p>
+<span class="math display">
+x=3.25
+</span>
+</p>
+<p>
+Por lo tanto:
+</p>
+<p>
+<span class="math display">
+Q_3=3.25
+</span>
+</p>
+<p>
+Finalmente, el rango intercuartílico es:
+</p>
+<p>
+<span class="math display">
+RIQ=Q_3-Q_1=3.25-0.75=2.5
+</span>
+</p>
+<hr>
+</section>
+</section>
+<section id="punto-9" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> .Punto 9</h1>
+<p>
+La variable aleatoria <span class="math inline">X</span> tiene función de densidad dada por:
+</p>
+<p><span class="math display">
+f(x) = \begin{cases}
+x &amp; \text{si } 0 &lt; x &lt; 1 \\
+2 - x &amp; \text{si } 1 \le x &lt; 2 \\
+0 &amp; \text{en cualquier otra parte}
+\end{cases}
+</span></p>
+<ol type="a">
+<li>
+Demostrar que <span class="math inline">f(x)</span> es una función de densidad y representarla gráficamente.
+</li>
+<li>
+Obtener la función de distribución de la variable aleatoria <span class="math inline">X</span> y representarla gráficamente.
+</li>
+<li>
+Calcula el valor esperado y la varianza de <span class="math inline">X</span>.
+</li>
+<li>
+Hallar los percentiles 30 y 70 de la distribución.
+</li>
+</ol>
+<section id="respuesta-3" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="respuesta-3"><span class="header-section-number">5.1</span> Respuesta</h2>
+<p>
+Sea <span class="math inline">X</span> una variable aleatoria continua con función de densidad dada por:
+</p>
+<p>
+<span class="math display">
+f(x)=
+\begin{cases}
+x, &amp; 0 &lt; x &lt; 1 \\
+2-x, &amp; 1 \le x &lt; 2 \\
+0, &amp; \text{en cualquier otra parte}
+\end{cases}
+</span>
+</p>
+<h3 class="anchored">
+<ol type="a">
+<li><p>Demostrar que <span class="math inline">f(x)</span> es una función de densidad y representarla gráficamente</p>
+</li></ol></h3>
+
+<p>
+Para verificar que una función es densidad de probabilidad, debe cumplir dos condiciones: que sea no negativa en todo su dominio y que el área total bajo la curva sea igual a 1.
+</p>
+<p>
+En este caso, la función cumple la condición de no negatividad porque en el intervalo <span class="math inline">(0,1)</span> se tiene <span class="math inline">f(x)=x</span>, que es positiva, y en <span class="math inline">[1,2)</span> se tiene <span class="math inline">f(x)=2-x</span>, que también es positiva o cero en ese tramo. Además, fuera de esos intervalos la función vale cero.
+</p>
+<p>
+Ahora verificamos el área total:
+</p>
+<p>
+<span class="math display">
+\int_{-\infty}^{\infty} f(x)\,dx
+=
+\int_0^1 x\,dx + \int_1^2 (2-x)\,dx
+</span>
+</p>
+<p>
+Calculamos la primera integral:
+</p>
+<p>
+<span class="math display">
+\int_0^1 x\,dx = \left[\frac{x^2}{2}\right]_0^1
+= \frac{1^2}{2} - \frac{0^2}{2}
+= \frac{1}{2}
+</span>
+</p>
+<p>
+Ahora la segunda:
+</p>
+<p>
+<span class="math display">
+\int_1^2 (2-x)\,dx
+=
+\left[2x-\frac{x^2}{2}\right]_1^2
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\left(4-\frac{4}{2}\right) - \left(2-\frac{1}{2}\right)
+=
+(4-2)-(2-0.5)
+=
+2-1.5
+=
+\frac{1}{2}
+</span>
+</p>
+<p>
+Sumando ambos resultados:
+</p>
+<p>
+<span class="math display">
+\int_{-\infty}^{\infty} f(x)\,dx
+=
+\frac{1}{2}+\frac{1}{2}=1
+</span>
+</p>
+<p>
+Como la función es no negativa y su integral total es 1, entonces sí es una función de densidad.
+</p>
+<p>
+Su representación grafica es:
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="dv">1</span>, x,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&gt;=</span><span class="dv">1</span> <span class="sc">&amp;</span> x<span class="sc">&lt;</span><span class="dv">2</span>, <span class="dv">2</span><span class="sc">-</span>x, <span class="dv">0</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, f, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"f(x)"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Función de densidad"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+<ol start="2" type="a">
+<li><p>Obtener la función de distribución de la variable aleatoria <span class="math inline">X</span> y representarla gráficamente</p>
+</li></ol></h3>
+
+<p>
+La función de distribución acumulada se define como:
+</p>
+<p>
+<span class="math display">
+F(x)=P(X\le x)=\int_{-\infty}^{x} f(t)\,dt
+</span>
+</p>
+<p>
+Debido a que la densidad cambia de expresión según el intervalo, la función acumulada también debe escribirse por tramos.
+</p>
+<p>
+Si <span class="math inline">x \le 0</span>, no se ha acumulado probabilidad, por lo tanto:
+</p>
+<p>
+<span class="math display">
+F(x)=0
+</span>
+</p>
+<p>
+Si <span class="math inline">0 &lt; x &lt; 1</span>, solo se integra la parte <span class="math inline">f(t)=t</span>:
+</p>
+<p>
+<span class="math display">
+F(x)=\int_0^x t\,dt
+</span>
+</p>
+<p>
+<span class="math display">
+F(x)=\left[\frac{t^2}{2}\right]_0^x=\frac{x^2}{2}
+</span>
+</p>
+<p>
+Si <span class="math inline">1 \le x &lt; 2</span>, ya se acumuló toda la probabilidad del primer intervalo y además se suma la parte correspondiente desde 1 hasta <span class="math inline">x</span> en la segunda expresión:
+</p>
+<p>
+<span class="math display">
+F(x)=\int_0^1 t\,dt+\int_1^x (2-t)\,dt
+</span>
+</p>
+<p>
+La primera parte vale:
+</p>
+<p>
+<span class="math display">
+\int_0^1 t\,dt=\frac{1}{2}
+</span>
+</p>
+<p>
+Y la segunda:
+</p>
+<p>
+<span class="math display">
+\int_1^x (2-t)\,dt
+=
+\left[2t-\frac{t^2}{2}\right]_1^x
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\left(2x-\frac{x^2}{2}\right)-\left(2-\frac{1}{2}\right)
+=
+2x-\frac{x^2}{2}-\frac{3}{2}
+</span>
+</p>
+<p>
+Entonces:
+</p>
+<p>
+<span class="math display">
+F(x)=\frac{1}{2}+2x-\frac{x^2}{2}-\frac{3}{2}
+=
+2x-\frac{x^2}{2}-1
+</span>
+</p>
+<p>
+Finalmente, si <span class="math inline">x \ge 2</span>, ya se ha acumulado toda la probabilidad:
+</p>
+<p>
+<span class="math display">
+F(x)=1
+</span>
+</p>
+<p>
+Por tanto, la función de distribución queda:
+</p>
+<p>
+<span class="math display">
+F(x)=
+\begin{cases}
+0, &amp; x \le 0 \\
+\frac{x^2}{2}, &amp; 0 &lt; x &lt; 1 \\
+2x-\frac{x^2}{2}-1, &amp; 1 \le x &lt; 2 \\
+1, &amp; x \ge 2
+\end{cases}
+</span>
+</p>
+<p>Y su representación grafica es:</p>
+<p></p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x<span class="sc">&lt;=</span><span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">1</span>, x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">2</span>, <span class="dv">2</span><span class="sc">*</span>x <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, F, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>, <span class="at">ylab=</span><span class="st">"F(x)"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Función de distribución"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+<ol start="3" type="a">
+<li><p>Calcular <span class="math inline">E[X]</span> y la Varianza de <span class="math inline">X</span></p>
+</li></ol></h3>
+
+<p>
+El valor esperado de una variable continua se calcula mediante:
+</p>
+<p>
+<span class="math display">
+E[X]=\int_{-\infty}^{\infty} x f(x)\,dx
+</span>
+</p>
+<p>
+Como la densidad solo es diferente de cero en <span class="math inline">(0,1)</span> y <span class="math inline">[1,2)</span>, se tiene:
+</p>
+<p>
+<span class="math display">
+E[X]=\int_0^1 x(x)\,dx+\int_1^2 x(2-x)\,dx
+</span>
+</p>
+<p>
+En la primera integral:
+</p>
+<p>
+<span class="math display">
+\int_0^1 x^2\,dx=\left[\frac{x^3}{3}\right]_0^1=\frac{1}{3}
+</span>
+</p>
+<p>
+En la segunda:
+</p>
+<p>
+<span class="math display">
+\int_1^2 x(2-x)\,dx=\int_1^2 (2x-x^2)\,dx
+</span>
+</p>
+<p>
+<span class="math display">
+=\left[x^2-\frac{x^3}{3}\right]_1^2
+</span>
+</p>
+<p>
+<span class="math display">
+=\left(4-\frac{8}{3}\right)-\left(1-\frac{1}{3}\right)
+=
+\frac{4}{3}-\frac{2}{3}
+=
+\frac{2}{3}
+</span>
+</p>
+<p>
+Sumando ambas partes:
+</p>
+<p>
+<span class="math display">
+E[X]=\frac{1}{3}+\frac{2}{3}=1
+</span>
+</p>
+<p>
+Para calcular la varianza de <span class="math inline">X</span>, primero calculamos <span class="math inline">E[X^2]</span>:
+</p>
+<p>
+<span class="math display">
+E[X^2]=\int_{-\infty}^{\infty} x^2 f(x)\,dx
+</span>
+</p>
+<p>
+Entonces:
+</p>
+<p>
+<span class="math display">
+E[X^2]=\int_0^1 x^2(x)\,dx+\int_1^2 x^2(2-x)\,dx
+</span>
+</p>
+<p>
+La primera integral es:
+</p>
+<p>
+<span class="math display">
+\int_0^1 x^3\,dx=\left[\frac{x^4}{4}\right]_0^1=\frac{1}{4}
+</span>
+</p>
+<p>
+La segunda integral:
+</p>
+<p>
+<span class="math display">
+\int_1^2 x^2(2-x)\,dx=\int_1^2 (2x^2-x^3)\,dx
+</span>
+</p>
+<p>
+<span class="math display">
+=\left[\frac{2x^3}{3}-\frac{x^4}{4}\right]_1^2
+</span>
+</p>
+<p>
+<span class="math display">
+=\left(\frac{16}{3}-4\right)-\left(\frac{2}{3}-\frac{1}{4}\right)
+</span>
+</p>
+<p>
+<span class="math display">
+=\frac{4}{3}-\frac{5}{12}
+=\frac{16}{12}-\frac{5}{12}
+=\frac{11}{12}
+</span>
+</p>
+<p>
+Por tanto:
+</p>
+<p>
+<span class="math display">
+E[X^2]=\frac{1}{4}+\frac{11}{12}
+=\frac{3}{12}+\frac{11}{12}
+=\frac{14}{12}
+=\frac{7}{6}
+</span>
+</p>
+<p>
+La varianza se obtiene con:
+</p>
+<p>
+<span class="math display">
+Var(X)=E[X^2]-(E[X])^2
+</span>
+</p>
+<p>
+Sustituyendo los valores:
+</p>
+<p>
+<span class="math display">
+Var(X)=\frac{7}{6}-1=\frac{1}{6}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="5" type="a">
+<li><p>Hallar los percentiles 30 y 70 de la distribución</p>
+</li></ol></h3>
+
+<p>
+El percentil 30 es el valor <span class="math inline">x</span> tal que:
+</p>
+<p>
+<span class="math display">
+F(x)=0.30
+</span>
+</p>
+<p>
+Como ese valor cae en el tramo <span class="math inline">0 &lt; x &lt; 1</span>, usamos:
+</p>
+<p>
+<span class="math display">
+\frac{x^2}{2}=0.30
+</span>
+</p>
+<p>
+<span class="math display">
+x^2=0.60
+</span>
+</p>
+<p>
+<span class="math display">
+x=\sqrt{0.60}\approx 0.775
+</span>
+</p>
+<p>
+Entonces:
+</p>
+<p>
+<span class="math display">
+P_{30}\approx 0.775
+</span>
+</p>
+<p>
+Ahora hallamos el percentil 70, que satisface:
+</p>
+<p>
+<span class="math display">
+F(x)=0.70
+</span>
+</p>
+<p>
+Este valor pertenece al tramo <span class="math inline">1 \le x &lt; 2</span>, así que:
+</p>
+<p>
+<span class="math display">
+2x-\frac{x^2}{2}-1=0.70
+</span>
+</p>
+<p>
+<span class="math display">
+2x-\frac{x^2}{2}=1.70
+</span>
+</p>
+<p>
+Multiplicando por 2:
+</p>
+<p>
+<span class="math display">
+4x-x^2=3.40
+</span>
+</p>
+<p>
+<span class="math display">
+x^2-4x+3.40=0
+</span>
+</p>
+<p>
+Aplicamos la fórmula cuadrática:
+</p>
+<p>
+<span class="math display">
+x=\frac{4\pm\sqrt{16-13.6}}{2}
+=
+\frac{4\pm\sqrt{2.4}}{2}
+</span>
+</p>
+<p>
+Tomamos la solución que pertenece al intervalo <span class="math inline">[1,2]</span>:
+</p>
+<p>
+<span class="math display">
+x\approx \frac{4-1.549}{2}\approx 1.225
+</span>
+</p>
+<p>
+Por tanto:
+</p>
+<p>
+<span class="math display">
+P_{70}\approx 1.225
+</span>
+</p>
+<hr>
+</section>
+</section>
+<section id="punto-19" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> .Punto 19</h1>
+<p>
+En una población, la cantidad de plomo que tiene una persona en la sangre, medida en p.p.m., es una variable aleatoria con función de densidad:
+</p>
+<p><span class="math display">
+f(x) = \begin{cases}
+\frac{x}{500} &amp; \text{si } 0 \le x &lt; 20 \\
+\frac{50 - x}{750} &amp; \text{si } 20 \le x &lt; 50 \\
+0 &amp; \text{en el resto}
+\end{cases}
+</span></p>
+<ol type="a">
+<li>
+Representar <span class="math inline">f(x)</span> gráficamente.
+</li>
+<li>
+Demostrar que <span class="math inline">f(x)</span> es una función de densidad.
+</li>
+<li>
+De entre las personas de la comunidad cuyo contenido de plomo en la sangre es superior a 15 p.p.m., ¿Qué porcentaje tiene en la sangre una cantidad de plomo superior a 40 p.p.m.?
+</li>
+<li>
+Calcular la cantidad media de plomo en la sangre de los individuos de la población.
+</li>
+<li>
+Elegimos una persona al azar. Obtener la probabilidad de que la cantidad de plomo en su sangre sea inferior a 25 p.p.m.
+</li>
+<li>
+Obtener la probabilidad de que en 40 personas elegidas al azar, haya entre 15 y 20 personas con una cantidad de plomo en la sangre inferior a 25 p.p.m.
+</li>
+</ol>
+<section id="respuesta-4" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="respuesta-4"><span class="header-section-number">6.1</span> Respuesta</h2>
+<p>
+Sea <span class="math inline">X</span> una variable aleatoria continua que representa la cantidad de plomo en la sangre (en p.p.m.), cuya función de densidad está dada por:
+</p>
+<p>
+<span class="math display">
+f(x)=
+\begin{cases}
+\frac{x}{500}, &amp; 0 \le x &lt; 20 \\
+\frac{50-x}{750}, &amp; 20 \le x &lt; 50 \\
+0, &amp; \text{en otro caso}
+\end{cases}
+</span>
+</p>
+<h3 class="anchored">
+<ol type="a">
+<li><p>Representar <span class="math inline">f(x)</span> gráficamente.</p>
+</li></ol></h3>
+
+<p>
+Grafica de la función de densidad
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">60</span>,<span class="at">by=</span><span class="fl">0.1</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">20</span>, x<span class="sc">/</span><span class="dv">500</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">50</span>, (<span class="dv">50</span><span class="sc">-</span>x)<span class="sc">/</span><span class="dv">750</span>,<span class="dv">0</span>))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,f,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Función de densidad"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"f(x)"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>
+Grafica de la función de distribución
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">60</span>,<span class="at">by=</span><span class="fl">0.1</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>F <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">20</span>, x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">1000</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ifelse</span>(x<span class="sc">&lt;</span><span class="dv">50</span>, <span class="fl">0.4</span> <span class="sc">+</span> (<span class="dv">50</span><span class="sc">*</span>x <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">800</span>)<span class="sc">/</span><span class="dv">750</span>,<span class="dv">1</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,F,<span class="at">type=</span><span class="st">"l"</span>,<span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Función de distribución"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"x"</span>,<span class="at">ylab=</span><span class="st">"F(x)"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+<ol start="2" type="a">
+<li><p>Demostrar que <span class="math inline">f(x)</span> es una función de densidad</p>
+</li></ol></h3>
+
+<p>
+Para verificar que <span class="math inline">f(x)</span> es una función de densidad, se deben cumplir dos condiciones fundamentales:
+</p>
+<ul>
+<li>
+<span class="math inline">f(x) \ge 0</span> para todo <span class="math inline">x</span>
+</li>
+<li>
+<span class="math inline">\int_{-\infty}^{\infty} f(x)\,dx = 1</span>
+</li>
+</ul>
+<p>
+La primera condición se cumple porque en los intervalos definidos la función es positiva y fuera de ellos es cero.
+</p>
+<p>
+Ahora verificamos la integral total:
+</p>
+<p>
+<span class="math display">
+\int_{-\infty}^{\infty} f(x)\,dx
+=
+\int_0^{20} \frac{x}{500}\,dx + \int_{20}^{50} \frac{50-x}{750}\,dx
+</span>
+</p>
+<p>
+Calculamos la primera integral:
+</p>
+<p>
+<span class="math display">
+\int_0^{20} \frac{x}{500}\,dx
+=
+\frac{1}{500}\int_0^{20} x\,dx
+=
+\frac{1}{500}\left[\frac{x^2}{2}\right]_0^{20}
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{500}\cdot \frac{20^2}{2}
+=
+\frac{1}{500}\cdot \frac{400}{2}
+=
+\frac{200}{500}
+=
+0.4
+</span>
+</p>
+<p>
+Ahora calculamos la segunda integral:
+</p>
+<p>
+<span class="math display">
+\int_{20}^{50} \frac{50-x}{750}\,dx
+=
+\frac{1}{750}\int_{20}^{50} (50-x)\,dx
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{750}\left[50x-\frac{x^2}{2}\right]_{20}^{50}
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{750}\left[
+(2500-1250)-(1000-200)
+\right]
+=
+\frac{1}{750}(1250-800)
+=
+\frac{450}{750}
+=
+0.6
+</span>
+</p>
+<p>
+Sumando ambas áreas:
+</p>
+<p>
+<span class="math display">
+0.4 + 0.6 = 1
+</span>
+</p>
+<p>
+Por lo tanto, <span class="math inline">f(x)</span> es una función de densidad válida.
+</p>
+<h3 class="anchored">
+<ol start="3" type="a">
+<li><p>Probabilidad condicional</p>
+</li></ol></h3>
+
+<p>
+Se desea calcular el porcentaje de personas con más de 40 p.p.m., dado que tienen más de 15 p.p.m.:
+</p>
+<p>
+<span class="math display">
+P(X&gt;40 \mid X&gt;15)=\frac{P(X&gt;40)}{P(X&gt;15)}
+</span>
+</p>
+<p>
+Primero calculamos <span class="math inline">P(X&gt;40)</span>:
+</p>
+<p>
+<span class="math display">
+P(X&gt;40)=\int_{40}^{50} \frac{50-x}{750}\,dx
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{750}\left[50x-\frac{x^2}{2}\right]_{40}^{50}
+=
+\frac{1}{750}(1250-1200)
+=
+\frac{50}{750}
+=
+\frac{1}{15}
+</span>
+</p>
+<p>
+Ahora calculamos <span class="math inline">P(X&gt;15)</span>:
+</p>
+<p>
+<span class="math display">
+P(X&gt;15)=\int_{15}^{20}\frac{x}{500}dx+\int_{20}^{50}\frac{50-x}{750}dx
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{500}\left[\frac{x^2}{2}\right]_{15}^{20}
++
+0.6
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{500}\cdot \frac{(400-225)}{2}
++
+0.6
+=
+\frac{175}{1000}+0.6
+=
+0.775
+</span>
+</p>
+<p>
+Finalmente:
+</p>
+<p>
+<span class="math display">
+P(X&gt;40 \mid X&gt;15)=\frac{1/15}{0.775}\approx 0.086
+</span>
+</p>
+<p>
+Esto corresponde aproximadamente al <b>8.6%</b>.
+</p>
+<h3 class="anchored">
+<ol start="4" type="a">
+<li><p>Valor esperado</p>
+</li></ol></h3>
+
+<p>
+El valor esperado de la variable se calcula mediante la expresión:
+</p>
+<p>
+<span class="math display">
+E[X]=\int x f(x)\,dx
+</span>
+</p>
+<p>
+Sustituyendo la función por tramos:
+</p>
+<p>
+<span class="math display">
+E[X]=\int_0^{20} x\frac{x}{500}dx + \int_{20}^{50} x\frac{50-x}{750}dx
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\int_0^{20} \frac{x^2}{500}dx + \int_{20}^{50} \frac{50x-x^2}{750}dx
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{1}{500}\left[\frac{x^3}{3}\right]_0^{20}
++
+\frac{1}{750}\left[25x^2-\frac{x^3}{3}\right]_{20}^{50}
+</span>
+</p>
+<p>
+<span class="math display">
+=
+\frac{8000}{1500}
++
+\frac{15000}{750}
+=
+\frac{16}{3}+20
+=
+\frac{76}{3}
+\approx 25.33
+</span>
+</p>
+<h3 class="anchored">
+<ol start="5" type="a">
+<li><p>Probabilidad</p>
+</li></ol></h3>
+
+<p>
+Se desea calcular la probabilidad de que el nivel de plomo sea menor a 25:
+</p>
+<p>
+<span class="math display">
+P(X&lt;25)
+</span>
+</p>
+<p>
+Se divide el cálculo en dos intervalos:
+</p>
+<p>
+<span class="math display">
+P(X&lt;25)=P(0&lt;X&lt;20)+P(20&lt;X&lt;25)
+</span>
+</p>
+<p>
+<span class="math display">
+=0.4 + \int_{20}^{25} \frac{50-x}{750}dx
+</span>
+</p>
+<p>
+<span class="math display">
+=
+0.4 + \frac{1}{750}[50x-\frac{x^2}{2}]_{20}^{25}
+</span>
+</p>
+<p>
+<span class="math display">
+=
+0.4 + \frac{1}{750}(937.5-800)
+=
+0.4 + 0.1833
+=
+0.5833
+</span>
+</p>
+<p>
+<span class="math display">
+P(X&lt;25)=\frac{7}{12}
+</span>
+</p>
+<h3 class="anchored">
+<ol start="6" type="a">
+<li><p>Distribución binomial</p>
+</li></ol></h3>
+
+<p>
+Sea <span class="math inline">Y</span> el número de personas (40) y hallan entre 15 y 20 personas con nivel de plomo menor a 25 p.p.m.
+</p>
+<p>
+Entonces:
+</p>
+<p>
+<span class="math display">
+Y \sim Binomial(40, p)
+</span>
+</p>
+<p>
+donde:
+</p>
+<p>
+<span class="math display">
+p=P(X&lt;25)=\frac{7}{12}
+</span>
+</p>
+<p>
+Se desea calcular:
+</p>
+<p>
+<span class="math display">
+P(15 \le Y \le 20)=\sum_{k=15}^{20} \binom{40}{k} p^k (1-p)^{40-k}
+</span>
+</p>
+<p>
+Esta probabilidad puede calcularse numéricamente utilizando software como R, los resultados obtenidos son los siguientes.
+</p>
+<p>
+Obtenemos las probabilidades individuales:
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">7</span><span class="sc">/</span><span class="dv">12</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de interés</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilidad exacta</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(k, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(probabilidades)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.003872315 0.008470688 0.016742066 0.029949697 0.048550035 0.071368551</code></pre>
+</div>
+</div>
+<p>
+Luego obtenemos la probabilidad total de <span class="math inline">P(15 \le Y \le 20)</span>:
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">7</span><span class="sc">/</span><span class="dv">12</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores de interés</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilidad exacta</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(k, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultado total</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">sum</span>(probabilidades)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1789534</code></pre>
+</div>
+</div>
+<p>
+Y finalmente graficamos la respuesta obtenida:
+</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores posibles</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>n</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># PMF binomial</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfica</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"h"</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Número de personas (Y)"</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"P(Y = k)"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribución Binomial Y ~ Bin(40, 7/12)"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Resaltar intervalo [15,20]</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(k, <span class="fu">dbinom</span>(k, n, p), <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Taller_1_Estadistica_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="Taller_1_Estadistica_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
